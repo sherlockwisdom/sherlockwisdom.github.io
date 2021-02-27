@@ -51,7 +51,12 @@
 		// Get category
 		let fullpath = window.location.pathname.split("/")
 		fullpath.pop()
-		document.getElementById("category").innerHTML = fullpath.pop()
+		let cat = fullpath.pop()
+		let a = document.createElement("a")
+		a.href = "../" + cat
+		a.appendChild(document.createTextNode(cat))
+
+		document.getElementById("category").appendChild( a )
 	</script>
 
 </body>
