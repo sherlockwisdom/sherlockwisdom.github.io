@@ -44,7 +44,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 	<script>
 		// Get title text
-		let filename = unescape(window.location.pathname.split("/").pop())
+		let filename = unescape(window.location.pathname.split("/").pop()).split(".html")[0]
 		document.title = filename + " -" + document.title
 		document.getElementById("topic").innerHTML = filename
 

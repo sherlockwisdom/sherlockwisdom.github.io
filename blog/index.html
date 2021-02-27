@@ -45,7 +45,7 @@
 	<script src="pages.js"></script>
 	<script>
 		// Get title text
-		let filename = unescape(window.location.pathname.split("/").pop())
+		let filename = unescape(window.location.pathname.split("/").pop()).split(".html")[0]
 		document.title = filename + " -" + document.title
 		document.getElementById("topic").innerHTML = filename
 
@@ -60,7 +60,7 @@
 		for(let i in pages ) {
 			let a = document.createElement("a")
 			a.href = pages[i]
-			a.appendChild(document.createTextNode(`[${Number(i)+1}] ${pages[i].split(".")[0]}`))
+			a.appendChild(document.createTextNode(`[${Number(i)+1}] ${pages[i].split(".html")[0]}`))
 
 			document.getElementById("postings").appendChild(a)
 		}
