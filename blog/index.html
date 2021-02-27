@@ -60,6 +60,7 @@
 		for(let i in pages ) {
 			let a = document.createElement("a")
 			a.href = pages[i]
+			a.appendChild(document.createTextNode(`[${Number(i)+1}] ${pages[i].split(".")[0]}`))
 
 			document.getElementById("postings").appendChild(a)
 		}
