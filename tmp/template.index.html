@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+	<title>By Wisdom Nji aka Sherlock Wisdom Nji aka NDE SHERLOCK WISDOM NJI aka NDE WISDOM NJI</title>
+</head>
+
+
+<body>
+	<div class="container-fluid">
+		<!-- Heading goes here -->
+		<div class="container" id="header-text">
+			<div class="row">
+				<div class="col">
+					<h1 class="display-3" id="topic"></h1>
+					<figure class="text-end">
+						<blockquote class="blockquote">
+							<p id="category"></p>
+						</blockquote>
+						<figcaption class="blockquote-footer" id="author">
+							Wisdom Nji aka Sherlock Wisdom Nji aka NDE SHERLOCK WISDOM NJI aka NDE WISDOM NJI
+						</figcaption>
+						<figcaption class="blockquote-footer" id="disclaimer">Disclaimer: <small class="text-muted">Your sanity is in your own hands</small></figcaption>
+					</figure>
+				</div>
+		</div>
+
+		<!-- Body goes here -->
+		<div class="container" id="body-text">
+		</div>
+	</div>
+
+
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+	<script>
+		// Get title text
+		let filename = unescape(window.location.pathname.split("/").pop())
+		document.title = filename + " -" + document.title
+		document.getElementById("topic").innerHTML = filename
+
+		// Get category
+		let fullpath = window.location.pathname.split("/")
+		fullpath.pop()
+		document.getElementById("category").innerHTML = fullpath.pop()
+	</script>
+
+</body>
+</html>
