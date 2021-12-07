@@ -76,7 +76,6 @@
 	    async function start_reader() {
 			    document.getElementById("controllers").setAttribute("hidden", "hidden")
 				document.getElementsByTagName("body")[0].focus()
-				pause=false
 				let text = document.getElementById("text").value.replace('\n', ' ').split(" ")
 		    let speed = Number(document.getElementById("var_speed").value)
 			speed = speed > 250 ? speed : 250
