@@ -71,10 +71,9 @@
 					while( pause )
 						await new Promise(r => setTimeout(r, 500));
 				}
-			    document.getElementById("controllers").removeAttribute("hidden")
 			}
 
-	    function start_reader() {
+	    async function start_reader() {
 			    document.getElementById("controllers").setAttribute("hidden", "hidden")
 				document.getElementsByTagName("body")[0].focus()
 				pause=false
@@ -83,7 +82,8 @@
 			speed = speed > 250 ? speed : 250
 				console.log(speed)
 		document.getElementById("speed").innerHTML = speed + " wpm"
-		    show(speed, text)
+		    await show(speed, text)
+		    document.getElementById("controllers").removeAttribute("hidden")
 		}
 
 
