@@ -28,6 +28,7 @@
 				<br>
 				<div class="input-group mb-3">
 				  <input type="number" class="form-control" placeholder="speed (default set at 250 wpm)" id="var_speed" value="250">
+				  <input type="number" class="form-control" placeholder="ngram" id="var_ngram" value="1">
 				  <button class="btn btn-outline-primary" type="button" id="var_speed" onclick="start_reader()">Read!</button>
 				</div>
 			</div>
@@ -62,11 +63,19 @@
 					    }
 			}
 
-		    async function show(speed, text) { 
+		    async function show(speed, text, ngram) { 
 					var reader = document.getElementById("reader")
 					speed = speed / 60
 			    for(let i in text) {
-				    reader.innerHTML = text[i]
+				let show_text=""
+				for(j=0;j<ngram;++j, show_text+=" ") {
+						    i = Number(i) + Number(j)
+					    show_text+=text[i]
+					    if(Number(j)+Number(ngram) >= text.length)
+						break
+					}
+				console.log(show_text)
+				    reader.innerHTML = show_text
 					await new Promise(r => setTimeout(r, 1000/speed));
 					while( pause )
 						await new Promise(r => setTimeout(r, 500));
@@ -80,10 +89,12 @@
 				// document.getElementsByTagName("body")[0].focus()
 				let text = document.getElementById("text").value.replace('\n', ' ').split(" ")
 		    let speed = Number(document.getElementById("var_speed").value)
+		    let ngram = Number(document.getElementById("var_ngram").value)
 			speed = speed > 250 ? speed : 250
 				console.log(speed)
+			ngram = ngram > 0 ? ngram : 1
 		document.getElementById("speed").innerHTML = speed + " wpm"
-		    show(speed, text)
+		    show(speed, text, ngram)
 		}
 
 
