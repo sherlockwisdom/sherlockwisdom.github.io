@@ -71,6 +71,7 @@
 					while( pause )
 						await new Promise(r => setTimeout(r, 500));
 				}
+			    document.getElementById("controllers").removeAttribute("hidden")
 			}
 
 	    function start_reader() {
@@ -83,7 +84,6 @@
 				console.log(speed)
 		document.getElementById("speed").innerHTML = speed + " wpm"
 		    show(speed, text)
-		    document.getElementById("controllers").removeAttribute("hidden")
 		}
 
 
